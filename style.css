@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+:root {
+  /* Primary */
+  --clr-bright-orange: hsl(31, 77%, 52%);
+  --clr-dark-cyan: hsl(184, 100%, 22%);
+  --clr-very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* Neutral */
+  --clr-trans-white: hsla(0, 0%, 100%, 0.75); /* for paragraphs */
+  --clr-very-light-grey: hsl(0, 0%, 95%); /* bg, heading, btn */
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  padding-block: 4rem;
+}
+
+body,
+.learn-more {
+  background-color: var(--clr-very-light-grey);
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.car-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-card * {
+  padding: 0.5rem;
+}
+
+#sedan {
+  background-color: var(--clr-bright-orange);
+}
+
+#sedan :is(.learn-more) {
+  color: var(--clr-bright-orange);
+}
+
+#suv {
+  background-color: var(--clr-dark-cyan);
+}
+
+#suv :is(.learn-more) {
+  color: var(--clr-dark-cyan);
+}
+
+#luxury {
+  background-color: var(--clr-very-dark-cyan);
+}
+
+#luxury :is(.learn-more) {
+  color: var(--clr-very-dark-cyan);
+}
+
+.card-title :is(h2) {
+  font-family: "Big Shoulders Display", cursive;
+  color: var(--clr-very-light-grey);
+  font-size: 2.5rem;
+}
+
+.card-desc :is(p) {
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--clr-trans-white);
+}
+
+.learn-more {
+  outline: none;
+  text-align: center;
+  width: 9.5rem;
+  height: 3rem;
+  border-style: none;
+  border-radius: 3rem;
+  align-self: flex-end;
+}
+
+.learn-more:hover {
+  cursor: pointer;
+}
+
+.learn-more:active {
+  border: 2px solid var(--clr-trans-white);
+  color: var(--clr-trans-white) !important;
+  background-color: transparent;
+}
+
+@media all and (min-width: 1100px) {
+  main {
+    display: flex;
+    width: 60%;
+  }
+
+  .card-desc :is(p) {
+    padding-bottom: 4rem;
+  }
+}
